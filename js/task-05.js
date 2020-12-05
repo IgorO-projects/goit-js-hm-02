@@ -6,11 +6,20 @@ const checkForSpam = function(message) {
     // }
     // return false;
 
-    if(message.toLowerCase().includes('sale') || message.toLowerCase().includes('[spam]')) {
-        return true;
+//     if(message.toLowerCase().includes('sale') || message.toLowerCase().includes('spam')) {
+//         return true;
+//     }
+//     return false;
+//   };
+    const arr = message.toLowerCase().split(' ');
+
+    for(const item of arr) {
+        if(item === 'sale' || item === '[spam]') {
+            return true;
+        }
     }
     return false;
-  };
+};
   /*
    * Вызовы функции для проверки работоспособности твоей реализации.
    */
@@ -21,3 +30,9 @@ const checkForSpam = function(message) {
   console.log(checkForSpam('Get best sale offers now!')); // true
   
   console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+
+
+
+
+//   ********************************************************************
+
